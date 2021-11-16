@@ -1,4 +1,6 @@
+// On importe mongoose
 const mongoose = require('mongoose');
+const sanitizerPlugin = require('mongoose-sanitizer-plugin');
 
 // Création du modèle Sauce pour un stockage dans la base de données
 const sauceSchema = mongoose.Schema({
@@ -14,5 +16,8 @@ const sauceSchema = mongoose.Schema({
   usersLiked: { type: [String] },
   usersDisliked: { type: [String] },
 });
+
+// Utilise le HTML Sanitizer de Google Caja pour effectuer la désinfection.
+sauceSchema.plugin(sanitizerPlugin);
 
 module.exports = mongoose.model('Sauce', sauceSchema);

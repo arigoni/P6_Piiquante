@@ -1,4 +1,4 @@
-// Création du serveur
+// Ecoute des requetes http et reponse
 const http = require('http');
 const app = require('./app');
 
@@ -38,8 +38,10 @@ const errorHandler = error => {
   }
 };
 
+// Créer un serveur avec express qui utilise app
 const server = http.createServer(app);
 
+// gestions des évenements serveur pour un retour console
 server.on('error', errorHandler);
 server.on('listening', () => {
   const address = server.address();
@@ -47,4 +49,5 @@ server.on('listening', () => {
   console.log('Listening on ' + bind);
 });
 
+// Le serveur écoute le port définit plus haut
 server.listen(port);

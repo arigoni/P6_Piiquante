@@ -1,3 +1,4 @@
+// On récupère le package jsonwebtoken
 const jwt = require('jsonwebtoken');
 
 // Validation userId en comparaison avec le token

@@ -1,4 +1,6 @@
+// Récupération du modèle 'sauce'
 const Sauce = require('../models/Sauce');
+// Récupération du module 'file system' de Node permettant de gérer ici les téléchargements et modifications d'images
 const fs = require('fs');
 
 // Logiques métiers pour les sauces
